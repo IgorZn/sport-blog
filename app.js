@@ -9,9 +9,9 @@ const { query, validationResult } = require('express-validator');
 
 // Mount routes
 const indexRouter = require('./routes/index.routes');
-const articles = require('./routes/articles.routes');
-const categories = require('./routes/categories.routes');
-const manage = require('./routes/manage.routes');
+const articlesRouter = require('./routes/articles.routes');
+const categoriesRouter = require('./routes/categories.routes');
+const manageRouter = require('./routes/manage.routes');
 
 // Express
 const app = express();
@@ -40,9 +40,9 @@ app.use(flash());
 
 // Routes
 app.use('/', indexRouter);
-app.use('/articles', articles);
-app.use('/categories', categories);
-app.use('/manage', manage);
+app.use('/articles', articlesRouter);
+app.use('/categories', categoriesRouter);
+app.use('/manage', manageRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

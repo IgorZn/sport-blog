@@ -1,7 +1,6 @@
-const express = require('express');
-const router = express.Router();
-
-/* Categories */
-router.route('/')
-
-module.exports = router;
+// @desc        Articles
+// @route       GET /
+// @access      Public
+exports.getCategories = async (req, res, next) => {
+    res.render('categories', { title: 'Categories' });
+};
